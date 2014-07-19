@@ -7,14 +7,14 @@
 n=100; Nstep=100;
 
 %parameters of sine-gordon equation
-omega; alpha=15; q=0.1;
+omega=20; alpha=15; q=0.1;
 
 % dx and dt<dx;
 L=1; dx=L/(n-1);
 dt=0.9*dx; x=0:dx:L;
 
 %Initial wave profile
-u=q*exp(-((20/L)*(x-L/2)).^2';
+u=q*exp(-((20/L)*(x-L/2)).^2');
 title_str = 'u_{tt}-u_{xx}=\alpha sin(\omega u))';
 
 %iNITIALISATION of arrays for later use

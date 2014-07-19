@@ -34,28 +34,4 @@ for time =1:Nstep,
     uxx(n)=(v(1)-2*v(n)+v(n-1))/(dx*dx);
     uxx(n-1)=(v(n)-2*v(n-1)+v(n-2))/(dx*dx);
     
-    for i=3:n-2,
-        uxx(i)=(v(i+1)-2*v(i)+v(i-1))/(dx*dx);
-    end
-    
-    %Sine Gordon Equation:
-    % u_{tt}=u_{xx}-slpah sin(omega*u)
-    % or n^{n+1}=-u^{n-1}+[2u^n...
-    % +dt*dt(u_{xx}-a sin(omega*u))]
-    
-    u=-U+(2*v+dt*dt*(uxx'-alpha*sin(omega*v)));
-    
-    % Reflecting boundary by fixing u(1)=u(n)=0
-    u(1)=0; u(n)=0;
-    
-    %updating the arrays
-    U=v; v=u;
-    %Plotting the results
-    plot(x,v_inital,'-.',x,u,'linewidth',2);
-    axis([0 L -q q]);
-    picture(time)=getframe;
-end
-% Play movie
-
-disp('Playing the animation ...');
-movie(picture,1);
+    for i=3:n-
